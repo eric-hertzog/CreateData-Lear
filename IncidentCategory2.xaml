@@ -104,7 +104,7 @@
         </Assign.Value>
       </Assign>
     </Switch>
-    <Assign sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Out_Category2]</OutArgument>
       </Assign.To>
