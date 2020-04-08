@@ -143,7 +143,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <DoWhile.Condition>[Contador &lt; DataNumber]</DoWhile.Condition>
-      <Sequence DisplayName="Do While - Main Sequence" sap:VirtualizedContainerService.HintSize="418,3136" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence DisplayName="Do While - Main Sequence" sap:VirtualizedContainerService.HintSize="568,5616" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="Status" />
         </Sequence.Variables>
@@ -153,7 +153,7 @@
             <x:Boolean x:Key="IsPinned">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Dados da Lear" sap:VirtualizedContainerService.HintSize="376,3633" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence DisplayName="Dados da Lear" sap:VirtualizedContainerService.HintSize="526,3633" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="CustomerName" />
             <Variable x:TypeArguments="x:String" Name="Division" />
@@ -486,14 +486,14 @@
             </Assign.Value>
           </Assign>
         </Sequence>
-        <Sequence DisplayName="Dados do Robô" sap:VirtualizedContainerService.HintSize="376,68" sap2010:WorkflowViewState.IdRef="Sequence_18">
+        <Sequence DisplayName="Dados do Robô" sap:VirtualizedContainerService.HintSize="526,1505" sap2010:WorkflowViewState.IdRef="Sequence_18">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_16">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[LastDay]</OutArgument>
             </Assign.To>
@@ -501,15 +501,15 @@
               <InArgument x:TypeArguments="x:Int32">[StartDate.DaysInMonth(2020,MonthNumber)]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="StartDate - Dados" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign DisplayName="StartDate - Dados" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[Dados_Vet(2)]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[Dados_Vet(19)]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[StartDate.ToShortDateString]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[LastDay = StartDate.Day]" DisplayName="If - Month &gt; MonthPlanned" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[LastDay = StartDate.Day]" DisplayName="If - Month &gt; MonthPlanned" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -537,15 +537,15 @@
               </Assign>
             </If.Else>
           </If>
-          <Assign DisplayName="StartTime - Dados" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign DisplayName="StartTime - Dados" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_6">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[Dados_Vet(3)]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[Dados_Vet(20)]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[StartTime.ToShortTimeString]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="StartTime++" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign DisplayName="StartTime++" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
               <OutArgument x:TypeArguments="s:DateTime">[StartTime]</OutArgument>
             </Assign.To>
@@ -553,21 +553,21 @@
               <InArgument x:TypeArguments="s:DateTime">[StartTime.AddMinutes(5)]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EndDate workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="EndDate.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EndDate workflow" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="EndDate.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="s:DateTime" x:Key="IO_EndDate">[EndDate]</InOutArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="In_MonthNumber">[MonthNumber]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Assign DisplayName="EndDate - Dados" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign DisplayName="EndDate - Dados" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_9">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[Dados_Vet(4)]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[Dados_Vet(21)]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[EndDate.ToShortDateString]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="EndDate++" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+          <Assign DisplayName="EndDate++" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_12">
             <Assign.To>
               <OutArgument x:TypeArguments="s:DateTime">[EndDate]</OutArgument>
             </Assign.To>
@@ -575,11 +575,11 @@
               <InArgument x:TypeArguments="s:DateTime">[EndDate.AddDays(1)]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[EndDate &gt; StartDate]" DisplayName="If - Ajustando EndDate" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[EndDate &gt; StartDate]" DisplayName="If - Ajustando EndDate" sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
@@ -593,35 +593,40 @@
               </Assign>
             </If.Then>
           </If>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EndTime workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="EndTime.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EndTime workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="EndTime.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="s:DateTime" x:Key="IO_EndTime">[EndTime]</InOutArgument>
               <InArgument x:TypeArguments="s:DateTime" x:Key="In_StartTime">[StartTime]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <Assign DisplayName="EndTime - Dados" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign DisplayName="EndTime - Dados" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_13">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[Dados_Vet(5)]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[Dados_Vet(22)]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[EndTime.ToShortTimeString]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Status workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Status.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Status workflow" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Status.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="x:String" x:Key="Out_Status">[Status]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Assign DisplayName="Status - Dados" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+          <Assign DisplayName="Status - Dados" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_19">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[Dados_Vet(6)]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[Dados_Vet(23)]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[Status]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
-        <Sequence DisplayName="Finalizando os dados" sap:VirtualizedContainerService.HintSize="376,306" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Finalizando os dados" sap:VirtualizedContainerService.HintSize="526,306" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
