@@ -153,7 +153,7 @@
             <x:Boolean x:Key="IsPinned">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Dados da Lear" sap:VirtualizedContainerService.HintSize="376,2952" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence DisplayName="Dados da Lear" sap:VirtualizedContainerService.HintSize="376,3179" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="CustomerName" />
             <Variable x:TypeArguments="x:String" Name="Division" />
@@ -166,6 +166,7 @@
             <Variable x:TypeArguments="x:String" Name="Priority" />
             <Variable x:TypeArguments="x:String" Name="Category2" />
             <Variable x:TypeArguments="x:String" Name="Impact" />
+            <Variable x:TypeArguments="x:String" Name="Source" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -349,6 +350,26 @@
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[Service]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke IncidentSource workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="IncidentSource.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="Out_Source">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Source" />
+              </OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <Assign DisplayName="Incident - Source - Dados" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Dados_Vet(14)]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Source]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke IncidentImpact workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="IncidentImpact.xaml">
