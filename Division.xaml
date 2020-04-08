@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>692,519</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>690,621</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CustomerName_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -33,7 +33,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -50,6 +50,8 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Division" sap:VirtualizedContainerService.HintSize="538,556" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -67,7 +69,7 @@
         <OutArgument x:TypeArguments="x:Int32">[Chance]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:Int32">[new Random().Next(1,5)]</InArgument>
+        <InArgument x:TypeArguments="x:Int32">[new Random().Next(1,3)]</InArgument>
       </Assign.Value>
     </Assign>
     <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[Chance]" sap:VirtualizedContainerService.HintSize="496,264" sap2010:WorkflowViewState.IdRef="Switch`1_1">
