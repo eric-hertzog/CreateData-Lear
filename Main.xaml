@@ -129,7 +129,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadCell>
-    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,1578" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,2881" sap2010:WorkflowViewState.IdRef="DoWhile_1">
       <DoWhile.Variables>
         <Variable x:TypeArguments="s:DateTime" Default="[new DateTime (2020, MonthNumber, 1)]" Name="EndDate" />
         <Variable x:TypeArguments="s:DateTime" Default="03/30/2020 09:00:00" Name="EndTime" />
@@ -143,7 +143,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <DoWhile.Condition>[Contador &lt; DataNumber]</DoWhile.Condition>
-      <Sequence DisplayName="Do While - Main Sequence" sap:VirtualizedContainerService.HintSize="418,2252" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence DisplayName="Do While - Main Sequence" sap:VirtualizedContainerService.HintSize="418,2717" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="Status" />
         </Sequence.Variables>
@@ -153,7 +153,7 @@
             <x:Boolean x:Key="IsPinned">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Dados da Lear" sap:VirtualizedContainerService.HintSize="376,1944" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence DisplayName="Dados da Lear" sap:VirtualizedContainerService.HintSize="376,2171" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="CustomerName" />
             <Variable x:TypeArguments="x:String" Name="Division" />
@@ -161,6 +161,7 @@
             <Variable x:TypeArguments="x:String" Name="Department" />
             <Variable x:TypeArguments="x:String" Name="Team" />
             <Variable x:TypeArguments="x:String" Name="Owner" />
+            <Variable x:TypeArguments="x:String" Name="Service" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -326,6 +327,26 @@
               <InArgument x:TypeArguments="x:String">[Owner]</InArgument>
             </Assign.Value>
           </Assign>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Service workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Service.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="Out_Service">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Service" />
+              </OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <Assign DisplayName="Incident - Service - Dados" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Dados_Vet(11)]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Service]</InArgument>
+            </Assign.Value>
+          </Assign>
         </Sequence>
         <Sequence DisplayName="Dados do Robô" sap:VirtualizedContainerService.HintSize="376,68" sap2010:WorkflowViewState.IdRef="Sequence_18">
           <sap:WorkflowViewStateService.ViewState>
@@ -462,11 +483,11 @@
             </Assign.Value>
           </Assign>
         </Sequence>
-        <Sequence DisplayName="Finalizando os dados" sap:VirtualizedContainerService.HintSize="376,68" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Finalizando os dados" sap:VirtualizedContainerService.HintSize="376,306" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[Dados_Vet]" DataTable="[Dados]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
